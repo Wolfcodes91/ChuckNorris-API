@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuck Norris</title>
+</head>
+<body>
+    <h1>Chuck Norris</h1>
+    
+    <form action="{% url 'home' %}" method="get">
+        <!-- {% csrf_token %} -->
+        <select name="category">
+            {% for item in categories %}
+            <option value="{{item}}">{{ item }}</option>
+            {% endfor %}
+        </select>
+            <input type="submit" class="btn" value="GET JOKE!">
+    </form>
+
+    <form action="{% url 'home' %}" method="get">
+        {% csrf_token %}
+      <button type="submit" class="btn">Get Random Joke</button>
+      </form>
+      <h3>{{ value }}</h3>
+   
+</body>
+</html>
